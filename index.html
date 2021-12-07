@@ -43,13 +43,11 @@
 
     <script>
       $('#github-button').on('click', function() {
-        // Initialize with your OAuth.io app public key
-        OAuth.initialize('VytfbIVFq0hRjBHg47TaWq8Ss68');
-        // Use popup for OAuth
-        OAuth.popup('github').then(github => {
-          console.log(github);
-          // Retrieves user data from oauth provider
-          console.log(github.me());
+        OAuth.initialize('VytfbIVFq0hRjBHg47TaWq8Ss68')
+   OAuth.popup('github').done(function(result) {
+    console.log(result)
+    // do some stuff with result
+})
         });
       })
         console.log('working');
